@@ -9,74 +9,74 @@ import javax.swing.border.EmptyBorder;
 
 public class UI extends JFrame implements ActionListener {
 
-	JPanel jp_id = new JPanel(); // id패널
-	JPanel jp_pw = new JPanel(); // pw패널
-	JPanel jp_pw2 = new JPanel(); // pw check 패널
-	JPanel jp_nm = new JPanel(); // name 패널
+	JPanel jp_id = new JPanel(); // id�뙣�꼸
+	JPanel jp_pw = new JPanel(); // pw�뙣�꼸
+	JPanel jp_pw2 = new JPanel(); // pw check �뙣�꼸
+	JPanel jp_nm = new JPanel(); // name �뙣�꼸
 	JPanel jp_b = new JPanel(); // dob select
 	JPanel jp_g = new JPanel(); // gender select
 	JPanel jp_m = new JPanel(); // mail select
 	JPanel jp_p = new JPanel();
 	JPanel jp_regi = new JPanel(); // regi btn
 	// id panel
-	JLabel label_id = new JLabel("ID 입력");
-	JTextField txt_id = new JTextField("ID를 입력하세요", 15);
-	JButton btn1 = new JButton("중복확인");
+	JLabel label_id = new JLabel("ID �엯�젰");
+	JTextField txt_id = new JTextField("ID瑜� �엯�젰�븯�꽭�슂", 15);
+	JButton btn1 = new JButton("以묐났�솗�씤");
 	// pw panel
-	JLabel label_pw = new JLabel("비밀번호 입력");
-	JLabel label_pw2 = new JLabel("비밀번호 확인");
+	JLabel label_pw = new JLabel("鍮꾨�踰덊샇 �엯�젰");
+	JLabel label_pw2 = new JLabel("鍮꾨�踰덊샇 �솗�씤");
 	JTextField txt_pw = new JTextField(15);
 	JTextField txt_pw2 = new JTextField(15);
 	// name panel
-	JLabel label_nm = new JLabel("이 름 ");
-	JTextField txt_nm = new JTextField(15); // nm텍스트 입력
+	JLabel label_nm = new JLabel("�씠 由� ");
+	JTextField txt_nm = new JTextField(15); // nm�뀓�뒪�듃 �엯�젰
 	// date panel
-	JLabel label_b1 = new JLabel("생년월일");
+	JLabel label_b1 = new JLabel("�깮�뀈�썡�씪");
 	JTextField yy = new JTextField(5); // year
-	JLabel label_b2 = new JLabel("년(4자)");
+	JLabel label_b2 = new JLabel("�뀈(4�옄)");
 	JTextField dd = new JTextField(5);
-	JLabel label_b3 = new JLabel("일");
+	JLabel label_b3 = new JLabel("�씪");
 	// email panel
 	JLabel label_m = new JLabel("E-mail");
 	JTextField txt_m = new JTextField(10);
 	JLabel at = new JLabel("@");
-	JButton btn2 = new JButton("중복확인");
+	JButton btn2 = new JButton("以묐났�솗�씤");
 	//gender panel
-	JLabel label_g = new JLabel("성 별");
+	JLabel label_g = new JLabel("�꽦 蹂�");
 	
-	// 회원가입 누를때마다 중복으로 창에 생겨나서 클래스안에 전역변수로 빼줌
+	// �쉶�썝媛��엯 �늻瑜쇰븣留덈떎 以묐났�쑝濡� 李쎌뿉 �깮寃⑤굹�꽌 �겢�옒�뒪�븞�뿉 �쟾�뿭蹂��닔濡� 鍮쇱쨲
 	String[] m = { "Month", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
 	JComboBox<String> mm = new JComboBox<String>(m); // combobox-
 	
-	String[] em = { "선택하세요", "gmail.com", "naver.com", "kakao.com" };
+	String[] em = { "�꽑�깮�븯�꽭�슂", "gmail.com", "naver.com", "kakao.com" };
 	JComboBox<String> mail = new JComboBox<String>(em);
 	
-	JRadioButton btnG1 = new JRadioButton("남", true);
-	JRadioButton btnG2 = new JRadioButton("여", true);
+	JRadioButton btnG1 = new JRadioButton("�궓", true);
+	JRadioButton btnG2 = new JRadioButton("�뿬", true);
 	ButtonGroup grp = new ButtonGroup();
 	// p_num
-	JLabel label_p = new JLabel("휴대폰번호");
+	JLabel label_p = new JLabel("�쑕���룿踰덊샇");
 	JTextField txt_p = new JTextField(10);
 	
 
 	// register btn
-	JButton regifin = new JButton("가입하기");
+	JButton regifin = new JButton("媛��엯�븯湲�");
 
-	DB check = new DB(); // DB.java 객체
+	DB check = new DB(); // DB.java 媛앹껜
 	static Member member = new Member();
 
 
 	public void LoginMain() {
 
-		JFrame mainwindow = new JFrame(); // 컨테이너 mainwindow 생성
-		JButton loginbutton = new JButton("로그인");
-		JButton forgotID = new JButton("아이디 찾기");
-		JButton forgotPW = new JButton("비밀번호 찾기");
-		JButton register = new JButton("회원가입"); // 버튼
-		JTextField inputID = new JTextField("ID를 입력하세요");
-		JTextField inputPW = new JTextField("비밀번호를 입력하세요"); // 아이디 비밀번호 입력란
+		JFrame mainwindow = new JFrame(); // 而⑦뀒�씠�꼫 mainwindow �깮�꽦
+		JButton loginbutton = new JButton("濡쒓렇�씤");
+		JButton forgotID = new JButton("�븘�씠�뵒 李얘린");
+		JButton forgotPW = new JButton("鍮꾨�踰덊샇 李얘린");
+		JButton register = new JButton("�쉶�썝媛��엯"); // 踰꾪듉
+		JTextField inputID = new JTextField("ID瑜� �엯�젰�븯�꽭�슂");
+		JTextField inputPW = new JTextField("鍮꾨�踰덊샇瑜� �엯�젰�븯�꽭�슂"); // �븘�씠�뵒 鍮꾨�踰덊샇 �엯�젰��
 		JLabel ID = new JLabel("ID");
-		JLabel PW = new JLabel("비밀번호"); // 레이블
+		JLabel PW = new JLabel("鍮꾨�踰덊샇"); // �젅�씠釉�
 
 		mainwindow.add(loginbutton);
 		mainwindow.add(forgotID);
@@ -88,7 +88,7 @@ public class UI extends JFrame implements ActionListener {
 		mainwindow.add(PW);
 
 		inputID.setForeground(Color.LIGHT_GRAY);
-		inputPW.setForeground(Color.LIGHT_GRAY); // "입력하세요" 텍스트 회색으로. 클릭시 사라지면서 사용자가 값 입력
+		inputPW.setForeground(Color.LIGHT_GRAY); // "�엯�젰�븯�꽭�슂" �뀓�뒪�듃 �쉶�깋�쑝濡�. �겢由��떆 �궗�씪吏�硫댁꽌 �궗�슜�옄媛� 媛� �엯�젰
 		mainwindow.setSize(420, 220);
 		mainwindow.setLayout(null);
 
@@ -100,14 +100,14 @@ public class UI extends JFrame implements ActionListener {
 		inputPW.setBounds(100, 60, 150, 30);
 		ID.setBounds(80, 25, 20, 20);
 		PW.setBounds(45, 65, 80, 20);
-		// 위치 조정
+		// �쐞移� 議곗젙
 
 		inputID.addFocusListener(new FocusListener() {
 
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (inputID.getText().equals("ID를 입력하세요")) {
+				if (inputID.getText().equals("ID瑜� �엯�젰�븯�꽭�슂")) {
 					inputID.setText("");
 					inputID.setForeground(Color.black);
 				}
@@ -118,7 +118,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (inputID.getText().equals("")) {
 					inputID.setForeground(Color.LIGHT_GRAY);
-					inputID.setText("ID를 입력하세요");
+					inputID.setText("ID瑜� �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -128,7 +128,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (inputPW.getText().equals("비밀번호를 입력하세요")) {
+				if (inputPW.getText().equals("鍮꾨�踰덊샇瑜� �엯�젰�븯�꽭�슂")) {
 					inputPW.setText("");
 					inputPW.setForeground(Color.black);
 				}
@@ -139,10 +139,10 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (inputPW.getText().equals("")) {
 					inputPW.setForeground(Color.LIGHT_GRAY);
-					inputPW.setText("비밀번호를 입력하세요");
+					inputPW.setText("鍮꾨�踰덊샇瑜� �엯�젰�븯�꽭�슂");
 				}
 			}
-		}); // 텍스트필드에 미리 회색으로 ID를 입력하세요라고 띄워놓고, 마우스를 클릭할시 사라지며 사용자가 입력할수있도록 바꿈
+		}); // �뀓�뒪�듃�븘�뱶�뿉 誘몃━ �쉶�깋�쑝濡� ID瑜� �엯�젰�븯�꽭�슂�씪怨� �쓣�썙�넃怨�, 留덉슦�뒪瑜� �겢由��븷�떆 �궗�씪吏�硫� �궗�슜�옄媛� �엯�젰�븷�닔�엳�룄濡� 諛붽퓞
 
 		forgotID.addActionListener(new ActionListener() {
 
@@ -151,7 +151,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				FindMyID();
 			}
-		}); // ID찾기 누르면 FindMyID()메소드 호출
+		}); // ID李얘린 �늻瑜대㈃ FindMyID()硫붿냼�뱶 �샇異�
 
 		forgotPW.addActionListener(new ActionListener() {
 
@@ -185,16 +185,16 @@ public class UI extends JFrame implements ActionListener {
 				mainwindow.dispose();
 			}
 		});
-		mainwindow.setTitle("로그인"); // 타이틀 설정
+		mainwindow.setTitle("濡쒓렇�씤"); // ���씠�� �꽕�젙
 		mainwindow.setVisible(true);
 		mainwindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	public void FindMyID() {
 		JFrame mainwindow = new JFrame();
-		JButton withphone = new JButton("내 명의 핸드폰으로 찾기");
-		JButton withemail = new JButton("내 정보에 등록된 Email로 찾기");
-		JButton findPW = new JButton("PW 찾기");
+		JButton withphone = new JButton("�궡 紐낆쓽 �빖�뱶�룿�쑝濡� 李얘린");
+		JButton withemail = new JButton("�궡 �젙蹂댁뿉 �벑濡앸맂 Email濡� 李얘린");
+		JButton findPW = new JButton("PW 李얘린");
 
 		mainwindow.add(withphone);
 		mainwindow.add(withemail);
@@ -237,16 +237,16 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		mainwindow.setTitle("ID찾기");
+		mainwindow.setTitle("ID李얘린");
 		mainwindow.setVisible(true);
 		mainwindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	public void FindMyIDwithphone() {
 		JFrame mainwindow = new JFrame();
-		JLabel phonelabel = new JLabel("핸드폰 번호");
-		JButton next = new JButton("다음");
-		JTextField phonenum = new JTextField("핸드폰 번호를 입력하세요 ('-' 제외)");
+		JLabel phonelabel = new JLabel("�빖�뱶�룿 踰덊샇");
+		JButton next = new JButton("�떎�쓬");
+		JTextField phonenum = new JTextField("�빖�뱶�룿 踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)");
 
 		mainwindow.add(phonelabel);
 		mainwindow.add(phonenum);
@@ -266,7 +266,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (phonenum.getText().equals("핸드폰 번호를 입력하세요 ('-' 제외)")) {
+				if (phonenum.getText().equals("�빖�뱶�룿 踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)")) {
 					phonenum.setText("");
 					phonenum.setForeground(Color.black);
 				}
@@ -277,7 +277,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (phonenum.getText().equals("")) {
 					phonenum.setForeground(Color.LIGHT_GRAY);
-					phonenum.setText("핸드폰 번호를 입력하세요 ('-' 제외)");
+					phonenum.setText("�빖�뱶�룿 踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)");
 				}
 			}
 		});
@@ -287,8 +287,8 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				   if (phonenum.getText().equals("") || phonenum.getText().equals("번호를 입력하세요 ('-' 제외)")) {
-	                    JOptionPane.showMessageDialog(null, "저장된 휴대폰 정보가 없습니다.");
+				   if (phonenum.getText().equals("") || phonenum.getText().equals("踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)")) {
+	                    JOptionPane.showMessageDialog(null, "���옣�맂 �쑕���룿 �젙蹂닿� �뾾�뒿�땲�떎.");
 	                } else {
 	                String findpnum = phonenum.getText();
 	                Func.foundpnum(findpnum);
@@ -296,16 +296,16 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		mainwindow.setTitle("내 명의 핸드폰으로 찾기");
+		mainwindow.setTitle("�궡 紐낆쓽 �빖�뱶�룿�쑝濡� 李얘린");
 		mainwindow.setVisible(true);
 		mainwindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	public void FindMyIDwithemail() {
 		JFrame mainwindow = new JFrame();
-		JLabel emaillabel = new JLabel("이메일");
-		JTextField emailtext = new JTextField("이메일을 입력하세요");
-		JButton next = new JButton("다음");
+		JLabel emaillabel = new JLabel("�씠硫붿씪");
+		JTextField emailtext = new JTextField("�씠硫붿씪�쓣 �엯�젰�븯�꽭�슂");
+		JButton next = new JButton("�떎�쓬");
 
 		mainwindow.add(emaillabel);
 		mainwindow.add(emailtext);
@@ -325,7 +325,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (emailtext.getText().equals("이메일을 입력하세요")) {
+				if (emailtext.getText().equals("�씠硫붿씪�쓣 �엯�젰�븯�꽭�슂")) {
 					emailtext.setText("");
 					emailtext.setForeground(Color.black);
 				}
@@ -336,7 +336,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (emailtext.getText().equals("")) {
 					emailtext.setForeground(Color.LIGHT_GRAY);
-					emailtext.setText("이메일을 입력하세요");
+					emailtext.setText("�씠硫붿씪�쓣 �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -346,8 +346,8 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				  if (emailtext.getText().equals("") || emailtext.getText().equals("이메일을 입력하세요")) {
-	                    JOptionPane.showMessageDialog(null, "저장된 이메일 주소가 없습니다.");
+				  if (emailtext.getText().equals("") || emailtext.getText().equals("�씠硫붿씪�쓣 �엯�젰�븯�꽭�슂")) {
+	                    JOptionPane.showMessageDialog(null, "���옣�맂 �씠硫붿씪 二쇱냼媛� �뾾�뒿�땲�떎.");
 	                } else {
 	                String findemail = emailtext.getText();
 	                Func.foundemail(findemail);
@@ -355,18 +355,18 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		mainwindow.setTitle("내 정보에 등록된 Email로 찾기");
+		mainwindow.setTitle("�궡 �젙蹂댁뿉 �벑濡앸맂 Email濡� 李얘린");
 		mainwindow.setVisible(true);
 		mainwindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	public void FoundID(String getid) {
 		JFrame mainwindow = new JFrame();
-		JLabel yourIDis1 = new JLabel(" 회원님의 ID는");
-		JLabel yourIDis2 = new JLabel(" 입니다.");
+		JLabel yourIDis1 = new JLabel(" �쉶�썝�떂�쓽 ID�뒗");
+		JLabel yourIDis2 = new JLabel(" �엯�땲�떎.");
 		JLabel yourID = new JLabel(getid);
-		JButton gotoLoginMain = new JButton("로그인");
-		JButton gotoFindPW = new JButton("비밀번호 찾기");
+		JButton gotoLoginMain = new JButton("濡쒓렇�씤");
+		JButton gotoFindPW = new JButton("鍮꾨�踰덊샇 李얘린");
 
 		mainwindow.add(yourIDis1);
 		mainwindow.add(yourIDis2);
@@ -402,7 +402,7 @@ public class UI extends JFrame implements ActionListener {
 		});
 
 		mainwindow.setVisible(true);
-		mainwindow.setTitle("ID찾기 성공");
+		mainwindow.setTitle("ID李얘린 �꽦怨�");
 		mainwindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
@@ -412,16 +412,16 @@ public class UI extends JFrame implements ActionListener {
 	
 	public void modifyMyaccount() {
 		JFrame mainwindow = new JFrame();
-		JLabel addresslabel = new JLabel("주소");
-		JLabel nicklabel = new JLabel("닉네임");
-		JLabel emaillabel = new JLabel("이메일");
-		JLabel newpwlabel = new JLabel("비밀번호");
+		JLabel addresslabel = new JLabel("二쇱냼");
+		JLabel nicklabel = new JLabel("�땳�꽕�엫");
+		JLabel emaillabel = new JLabel("�씠硫붿씪");
+		JLabel newpwlabel = new JLabel("鍮꾨�踰덊샇");
 
-		JTextField address = new JTextField("변경하실 주소를 입력하세요");
-		JTextField nick = new JTextField("변경하실 닉네임을 입력하세요");
-		JTextField email = new JTextField("변경하실 이메일을 입력하세요");
-		JTextField newpw = new JTextField("변경하실 비밀번호를 입력하세요");
-		JButton finish = new JButton("수정 완료");
+		JTextField address = new JTextField("蹂�寃쏀븯�떎 二쇱냼瑜� �엯�젰�븯�꽭�슂");
+		JTextField nick = new JTextField("蹂�寃쏀븯�떎 �땳�꽕�엫�쓣 �엯�젰�븯�꽭�슂");
+		JTextField email = new JTextField("蹂�寃쏀븯�떎 �씠硫붿씪�쓣 �엯�젰�븯�꽭�슂");
+		JTextField newpw = new JTextField("蹂�寃쏀븯�떎 鍮꾨�踰덊샇瑜� �엯�젰�븯�꽭�슂");
+		JButton finish = new JButton("�닔�젙 �셿猷�");
 		
 		mainwindow.add(nicklabel);
 		mainwindow.add(emaillabel);
@@ -456,7 +456,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (nick.getText().equals("변경하실 닉네임을 입력하세요")) {
+				if (nick.getText().equals("蹂�寃쏀븯�떎 �땳�꽕�엫�쓣 �엯�젰�븯�꽭�슂")) {
 					nick.setText("");
 					nick.setForeground(Color.black);
 				}
@@ -467,7 +467,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (nick.getText().equals("")) {
 					nick.setForeground(Color.LIGHT_GRAY);
-					nick.setText("변경하실 닉네임을 입력하세요");
+					nick.setText("蹂�寃쏀븯�떎 �땳�꽕�엫�쓣 �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -477,7 +477,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (email.getText().equals("변경하실 이메일을 입력하세요")) {
+				if (email.getText().equals("蹂�寃쏀븯�떎 �씠硫붿씪�쓣 �엯�젰�븯�꽭�슂")) {
 					email.setText("");
 					email.setForeground(Color.black);
 				}
@@ -488,7 +488,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (email.getText().equals("")) {
 					email.setForeground(Color.LIGHT_GRAY);
-					email.setText("변경하실 이메일을 입력하세요");
+					email.setText("蹂�寃쏀븯�떎 �씠硫붿씪�쓣 �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -498,7 +498,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (newpw.getText().equals("변경하실 비밀번호를 입력하세요")) {
+				if (newpw.getText().equals("蹂�寃쏀븯�떎 鍮꾨�踰덊샇瑜� �엯�젰�븯�꽭�슂")) {
 					newpw.setText("");
 					newpw.setForeground(Color.black);
 				}
@@ -509,7 +509,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (newpw.getText().equals("")) {
 					newpw.setForeground(Color.LIGHT_GRAY);
-					newpw.setText("변경하실 비밀번호를 입력하세요");
+					newpw.setText("蹂�寃쏀븯�떎 鍮꾨�踰덊샇瑜� �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -519,7 +519,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (address.getText().equals("변경하실 주소를 입력하세요")) {
+				if (address.getText().equals("蹂�寃쏀븯�떎 二쇱냼瑜� �엯�젰�븯�꽭�슂")) {
 					address.setText("");
 					address.setForeground(Color.black);
 				}
@@ -530,7 +530,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (address.getText().equals("")) {
 					address.setForeground(Color.LIGHT_GRAY);
-					address.setText("변경하실 주소를 입력하세요");
+					address.setText("蹂�寃쏀븯�떎 二쇱냼瑜� �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -550,7 +550,7 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		mainwindow.setTitle("내정보 수정");
+		mainwindow.setTitle("�궡�젙蹂� �닔�젙");
 		mainwindow.setVisible(true);
 		mainwindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
@@ -558,13 +558,13 @@ public class UI extends JFrame implements ActionListener {
 	
 	public void LoginSuccessful() {
 		JFrame mainwindow = new JFrame();
-		JLabel welcome = new JLabel(" 님, 환영합니다.");
+		JLabel welcome = new JLabel(" �떂, �솚�쁺�빀�땲�떎.");
 		Func.getemail();
 		Func.getnick();
 		JLabel preemail = new JLabel(Func.emailresult);
 		JLabel yourNickname = new JLabel(Func.nickresult);
-		JButton logout = new JButton("로그아웃");
-		JButton modify = new JButton("내정보 수정");
+		JButton logout = new JButton("濡쒓렇�븘�썐");
+		JButton modify = new JButton("�궡�젙蹂� �닔�젙");
 
 		mainwindow.add(welcome);
 		mainwindow.add(preemail);
@@ -599,23 +599,23 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		mainwindow.setTitle("로그인 성공");
+		mainwindow.setTitle("濡쒓렇�씤 �꽦怨�");
 		mainwindow.setVisible(true);
 		mainwindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------
 	public void pwserchMain() {
-		JFrame conta = new JFrame(); // 컨테이너 conta 만들어줌
-		BorderLayout blay = new BorderLayout(); // 컨테이너에 border레이아웃 넣어주고 패널로 위치 넣어줌
-		JPanel pan1 = new JPanel(); // 각 위치마다 넣을 패널 만들고 요소들 넣어줌
+		JFrame conta = new JFrame(); // 而⑦뀒�씠�꼫 conta 留뚮뱾�뼱以�
+		BorderLayout blay = new BorderLayout(); // 而⑦뀒�씠�꼫�뿉 border�젅�씠�븘�썐 �꽔�뼱二쇨퀬 �뙣�꼸濡� �쐞移� �꽔�뼱以�
+		JPanel pan1 = new JPanel(); // 媛� �쐞移섎쭏�떎 �꽔�쓣 �뙣�꼸 留뚮뱾怨� �슂�냼�뱾 �꽔�뼱以�
 		JPanel pan2 = new JPanel();
 		JPanel pan3 = new JPanel();
-		JLabel idlabel1 = new JLabel("비밀번호를 찾으실 ID를 입력해주세요");
+		JLabel idlabel1 = new JLabel("鍮꾨�踰덊샇瑜� 李얠쑝�떎 ID瑜� �엯�젰�빐二쇱꽭�슂");
 		JLabel idlabel2 = new JLabel("ID : ");
-		JTextField idinput = new JTextField("ID를 입력하세요");
-		JButton pwser = new JButton("PW 찾기");
-		JButton idser = new JButton("ID 찾기");
+		JTextField idinput = new JTextField("ID瑜� �엯�젰�븯�꽭�슂");
+		JButton pwser = new JButton("PW 李얘린");
+		JButton idser = new JButton("ID 李얘린");
 
 		pan1.setBorder(new EmptyBorder(100, 5, 5, 5));
 		pan2.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -640,7 +640,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (idinput.getText().equals("ID를 입력하세요")) {
+				if (idinput.getText().equals("ID瑜� �엯�젰�븯�꽭�슂")) {
 					idinput.setText("");
 					idinput.setForeground(Color.black);
 				}
@@ -651,7 +651,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (idinput.getText().equals("")) {
 					idinput.setForeground(Color.LIGHT_GRAY);
-					idinput.setText("ID를 입력하세요");
+					idinput.setText("ID瑜� �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -661,12 +661,12 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (idinput.getText().equals("") || idinput.getText().equals("ID를 입력하세요")) {
-					JOptionPane.showMessageDialog(null, "저장된 ID가 없습니다.");
+				if (idinput.getText().equals("") || idinput.getText().equals("ID瑜� �엯�젰�븯�꽭�슂")) {
+					JOptionPane.showMessageDialog(null, "���옣�맂 ID媛� �뾾�뒿�땲�떎.");
 				} else {
 				String findid = idinput.getText();
 				func.dbCheckID(findid); 
-				//conta.dispose(); // 이렇게 안닫아주면 아이디 틀려도 계속 고치라고 알림창 뜸, 맞으면 다음창 넘어가고 이것도 안꺼짐
+				//conta.dispose(); // �씠�젃寃� �븞�떕�븘二쇰㈃ �븘�씠�뵒 ���젮�룄 怨꾩냽 怨좎튂�씪怨� �븣由쇱갹 �쑙, 留욎쑝硫� �떎�쓬李� �꽆�뼱媛�怨� �씠寃껊룄 �븞爰쇱쭚
 				}
 			}
 		});
@@ -676,13 +676,13 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("ID찾기 창으로 이동");
+				System.out.println("ID李얘린 李쎌쑝濡� �씠�룞");
 				FindMyID();
 				conta.dispose();
 			}
 		});
 
-		conta.setTitle("ID로 PW 찾기");
+		conta.setTitle("ID濡� PW 李얘린");
 		conta.setSize(600, 400);
 		conta.setVisible(true);
 		conta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -694,8 +694,8 @@ public class UI extends JFrame implements ActionListener {
 		JPanel pan1 = new JPanel();
 		JPanel pan2 = new JPanel();
 
-		JButton pnumser = new JButton("휴대폰 번호로 비밀번호 찾기"); // 같은 핸드폰번호 가진 정보있는지 확인 후 임시 비밀번호 만들어줌
-		JButton emailser = new JButton("Email로 비밀번호 찾기"); // 같은 이메일 가진 정보있는지 확인 후 임시 비밀번호 만들어줌
+		JButton pnumser = new JButton("�쑕���룿 踰덊샇濡� 鍮꾨�踰덊샇 李얘린"); // 媛숈� �빖�뱶�룿踰덊샇 媛�吏� �젙蹂댁엳�뒗吏� �솗�씤 �썑 �엫�떆 鍮꾨�踰덊샇 留뚮뱾�뼱以�
+		JButton emailser = new JButton("Email濡� 鍮꾨�踰덊샇 李얘린"); // 媛숈� �씠硫붿씪 媛�吏� �젙蹂댁엳�뒗吏� �솗�씤 �썑 �엫�떆 鍮꾨�踰덊샇 留뚮뱾�뼱以�
 
 		pan1.setBorder(new EmptyBorder(120, 5, 5, 5));
 
@@ -727,7 +727,7 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		conta.setTitle("PW 찾기");
+		conta.setTitle("PW 李얘린");
 		conta.setSize(600, 400);
 		conta.setVisible(true);
 		conta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -738,9 +738,9 @@ public class UI extends JFrame implements ActionListener {
 		BorderLayout blay = new BorderLayout();
 		JPanel pan = new JPanel();
 
-		JLabel plabel = new JLabel("휴대폰 번호 : ");
-		JTextField pinput = new JTextField("번호를 입력하세요 ('-' 제외)"); 
-		JButton find = new JButton("찾기");
+		JLabel plabel = new JLabel("�쑕���룿 踰덊샇 : ");
+		JTextField pinput = new JTextField("踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)"); 
+		JButton find = new JButton("李얘린");
 
 		pan.setBorder(new EmptyBorder(150, 10, 10, 10));
 		pan.add(plabel);
@@ -758,7 +758,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (pinput.getText().equals("번호를 입력하세요 ('-' 제외)")) {
+				if (pinput.getText().equals("踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)")) {
 					pinput.setText("");
 					pinput.setForeground(Color.black);
 				}
@@ -770,7 +770,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (pinput.getText().equals("")) {
 					pinput.setForeground(Color.LIGHT_GRAY);
-					pinput.setText("번호를 입력하세요 ('-' 제외)");
+					pinput.setText("踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)");
 				}
 			}
 		});
@@ -780,8 +780,8 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (pinput.getText().equals("") || pinput.getText().equals("번호를 입력하세요 ('-' 제외)")) {
-					JOptionPane.showMessageDialog(null, "저장된 휴대폰 정보가 없습니다.");
+				if (pinput.getText().equals("") || pinput.getText().equals("踰덊샇瑜� �엯�젰�븯�꽭�슂 ('-' �젣�쇅)")) {
+					JOptionPane.showMessageDialog(null, "���옣�맂 �쑕���룿 �젙蹂닿� �뾾�뒿�땲�떎.");
 				} else {
 				String findphone = pinput.getText();
 				func.findpnum(findphone);
@@ -790,7 +790,7 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		conta.setTitle("휴대폰 번호로 PW 찾기");
+		conta.setTitle("�쑕���룿 踰덊샇濡� PW 李얘린");
 		conta.setSize(600, 400);
 		conta.setVisible(true);
 		conta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -801,9 +801,9 @@ public class UI extends JFrame implements ActionListener {
 		BorderLayout blay = new BorderLayout();
 		JPanel pan = new JPanel();
 
-		JLabel elabel = new JLabel("Email 주소 : ");
-		JTextField emainput = new JTextField("이메일 주소를 입력하세요");
-		JButton find = new JButton("찾기");
+		JLabel elabel = new JLabel("Email 二쇱냼 : ");
+		JTextField emainput = new JTextField("�씠硫붿씪 二쇱냼瑜� �엯�젰�븯�꽭�슂");
+		JButton find = new JButton("李얘린");
 
 		pan.setBorder(new EmptyBorder(150, 10, 10, 10));
 		pan.add(elabel);
@@ -821,7 +821,7 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if (emainput.getText().equals("이메일 주소를 입력하세요")) {
+				if (emainput.getText().equals("�씠硫붿씪 二쇱냼瑜� �엯�젰�븯�꽭�슂")) {
 					emainput.setText("");
 					emainput.setForeground(Color.black);
 				}
@@ -832,7 +832,7 @@ public class UI extends JFrame implements ActionListener {
 				// TODO Auto-generated method stub
 				if (emainput.getText().equals("")) {
 					emainput.setForeground(Color.LIGHT_GRAY);
-					emainput.setText("이메일 주소를 입력하세요");
+					emainput.setText("�씠硫붿씪 二쇱냼瑜� �엯�젰�븯�꽭�슂");
 				}
 			}
 		});
@@ -842,8 +842,8 @@ public class UI extends JFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (emainput.getText().equals("") || emainput.getText().equals("이메일 주소를 입력하세요")) {
-					JOptionPane.showMessageDialog(null, "저장된 Email 주소가 없습니다.");
+				if (emainput.getText().equals("") || emainput.getText().equals("�씠硫붿씪 二쇱냼瑜� �엯�젰�븯�꽭�슂")) {
+					JOptionPane.showMessageDialog(null, "���옣�맂 Email 二쇱냼媛� �뾾�뒿�땲�떎.");
 				} else {
 				String findema = emainput.getText();
 				func.findemail(findema);
@@ -852,7 +852,7 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		conta.setTitle("Email로 PW 찾기");
+		conta.setTitle("Email濡� PW 李얘린");
 		conta.setSize(800, 400);
 		conta.setVisible(true);
 		conta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -864,11 +864,11 @@ public class UI extends JFrame implements ActionListener {
 		JPanel pan1 = new JPanel();
 		JPanel pan2 = new JPanel();
 
-		JLabel pwshow1 = new JLabel("회원님의 비밀번호는  ");
-		JLabel pwshow2 = new JLabel(" 입니다.");
+		JLabel pwshow1 = new JLabel("�쉶�썝�떂�쓽 鍮꾨�踰덊샇�뒗  ");
+		JLabel pwshow2 = new JLabel(" �엯�땲�떎.");
 		JLabel pwtem = new JLabel(tempw);
-		JLabel txtshow = new JLabel("로그인 후 My page에서 비밀번호를 수정하세요.");
-		JButton login = new JButton("로그인");
+		JLabel txtshow = new JLabel("濡쒓렇�씤 �썑 My page�뿉�꽌 鍮꾨�踰덊샇瑜� �닔�젙�븯�꽭�슂.");
+		JButton login = new JButton("濡쒓렇�씤");
 
 		pan1.setBorder(new EmptyBorder(150, 5, 5, 5));
 		pan2.setBorder(new EmptyBorder(5, 5, 100, 5));
@@ -892,7 +892,7 @@ public class UI extends JFrame implements ActionListener {
 			}
 		});
 
-		conta.setTitle("PW 찾기 성공");
+		conta.setTitle("PW 李얘린 �꽦怨�");
 		conta.setSize(600, 400);
 		conta.setVisible(true);
 		conta.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -901,7 +901,7 @@ public class UI extends JFrame implements ActionListener {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	Func func = new Func();
 	
-	void regiMain() { // 회원가입 화면
+	void regiMain() { // �쉶�썝媛��엯 �솕硫�
 
 		// ID(duplication check btn),PW,PW_check,name,dob(checkbox/lune click
 		// btn),sex(checkbox),email,phonenum;
@@ -913,20 +913,20 @@ public class UI extends JFrame implements ActionListener {
 
 		txt_id.addFocusListener(new FocusListener() {
 
-			@Override // 커서 누르면 글씨 검정으로
+			@Override // 而ㅼ꽌 �늻瑜대㈃ 湲��뵪 寃��젙�쑝濡�
 			public void focusGained(FocusEvent arg0) {
-				if (txt_id.getText().equals("ID를 입력하세요")) {
+				if (txt_id.getText().equals("ID瑜� �엯�젰�븯�꽭�슂")) {
 					txt_id.setText("");
 					txt_id.setForeground(Color.BLACK);
 					String id = txt_id.getText().trim();
 				}
 			}
 
-			@Override // 커서 안누르면 id를 입력하세요 txt
+			@Override // 而ㅼ꽌 �븞�늻瑜대㈃ id瑜� �엯�젰�븯�꽭�슂 txt
 			public void focusLost(FocusEvent e) {
 				if (txt_id.getText().equals("")) {
 					txt_id.setForeground(Color.LIGHT_GRAY);
-					txt_id.setText("ID를 입력하세요");
+					txt_id.setText("ID瑜� �엯�젰�븯�꽭�슂");
 				}
 
 			}
@@ -940,7 +940,7 @@ public class UI extends JFrame implements ActionListener {
 		txt_pw.setForeground(Color.LIGHT_GRAY);
 		txt_pw2.setForeground(Color.LIGHT_GRAY);
 		
-		// pw 넣으면 색변경
+		// pw �꽔�쑝硫� �깋蹂�寃�
 		txt_pw.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -953,11 +953,11 @@ public class UI extends JFrame implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				String pw2 = txt_pw2.getText().trim();
 				if(txt_pw2.getText().equals(txt_pw.getText())!=true) {
-					JOptionPane.showMessageDialog(null, "비밀번호 불일치");
+					JOptionPane.showMessageDialog(null, "鍮꾨�踰덊샇 遺덉씪移�");
 				}
 			}
 		});
-		//pw2(비번확인)입력 시 pw와 동일한지 확인
+		//pw2(鍮꾨쾲�솗�씤)�엯�젰 �떆 pw�� �룞�씪�븳吏� �솗�씤
 		
 
 		// nm panel
@@ -966,7 +966,7 @@ public class UI extends JFrame implements ActionListener {
 		// dob panel
 		label_b1.setFont(new Font("HYGothic", Font.BOLD, 15));
 		label_b2.setFont(new Font("HYGothic", 15, 15));
-		//강사님께 제출하고 내가 수정함, 가입버튼 클릭 시 증식 오류 해결
+		//媛뺤궗�떂猿� �젣異쒗븯怨� �궡媛� �닔�젙�븿, 媛��엯踰꾪듉 �겢由� �떆 利앹떇 �삤瑜� �빐寃�
 	//	String[] m = { "Month", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
 	//	JComboBox<String> mm = new JComboBox<String>(m); // combobox-
 		label_b3.setFont(new Font("HYGothic", 15, 15));
@@ -979,8 +979,8 @@ public class UI extends JFrame implements ActionListener {
 		// email panel
 		label_m.setFont(new Font("HYGothic", Font.BOLD, 15));
 		label_m.setFont(new Font("HYGothic", 15, 15));
-		//강사님께 제출하고 내가 수정함, 가입버튼 클릭 시 증식 오류 해결
-	//	String[] em = { "선택하세요", "gmail.com", "naver.com", "kakao.com" };
+		//媛뺤궗�떂猿� �젣異쒗븯怨� �궡媛� �닔�젙�븿, 媛��엯踰꾪듉 �겢由� �떆 利앹떇 �삤瑜� �빐寃�
+	//	String[] em = { "�꽑�깮�븯�꽭�슂", "gmail.com", "naver.com", "kakao.com" };
 	//	JComboBox<String> mail = new JComboBox<String>(em);
 
 		btn2.setFont(new Font("HYGothic", 10, 10));
@@ -988,11 +988,11 @@ public class UI extends JFrame implements ActionListener {
 		// pnum panel
 		label_p.setFont(new Font("HYGothic", Font.BOLD, 15));
 		
-		//중복확인
+		//以묐났�솗�씤
 		btn1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("확인");
+				System.out.println("�솗�씤");
 				func.checkID(txt_id.getText());
 			}
 		});
@@ -1000,17 +1000,17 @@ public class UI extends JFrame implements ActionListener {
 		btn2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("확인");
+				System.out.println("�솗�씤");
 				func.checkMail(txt_m.getText());
 				
 			}
 		});
 
-		// regi 버튼 액션
+		// regi 踰꾪듉 �븸�뀡
 		regifin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("가입");
+				System.out.println("媛��엯");
 
 				member.setId(txt_id.getText());
 				member.setPw(txt_pw.getText());
@@ -1028,11 +1028,11 @@ public class UI extends JFrame implements ActionListener {
 				member.setPhone(txt_p.getText());
 
 				System.out.println(member.birth);
-				// DB용클래스 하나 더 만들어서save
+				// DB�슜�겢�옒�뒪 �븯�굹 �뜑 留뚮뱾�뼱�꽌save
 				func.save();
 
-				// 가입완료 메세지 창
-				JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.");
+				// 媛��엯�셿猷� 硫붿꽭吏� 李�
+				JOptionPane.showMessageDialog(null, "�쉶�썝媛��엯�씠 �셿猷뚮릺�뿀�뒿�땲�떎.");
 				dispose();
 			}
 
@@ -1070,7 +1070,7 @@ public class UI extends JFrame implements ActionListener {
 		jp_p.add(txt_p);
 		jp_regi.add(regifin);
 
-		setTitle("회원가입");
+		setTitle("�쉶�썝媛��엯");
 		setLayout(new GridLayout(9, 1));
 		// add- panel
 		add(jp_id);
